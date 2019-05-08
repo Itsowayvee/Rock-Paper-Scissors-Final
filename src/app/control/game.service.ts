@@ -11,7 +11,6 @@ export class GameService {
   randomChoice: string;
   // '1' - Paper , '2' - Rock , '3' - Scissors
   rockPaperScissors = ['r', 'p', 's'];
-  random = ['m'];
 
   constructor(private gameResult: ResultService) { }
 
@@ -52,8 +51,8 @@ export class GameService {
     // console.log(this.compChoice);
 
     //random button
-    this.randomChoice = uChoice;
-    var uChoice = this.rockPaperScissors[Math.floor(Math.random() * this.rockPaperScissors.length)];
+    // this.randomChoice = uChoice;
+    // var uChoice = this.rockPaperScissors[Math.floor(Math.random() * this.rockPaperScissors.length)];
     //random button
 
     switch (uChoice + this.compChoice) {
