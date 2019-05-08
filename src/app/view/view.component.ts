@@ -22,6 +22,8 @@ export class ViewComponent implements OnInit {
   constructor(private game: GameService,
               private result: ResultService) { }
 
+
+  //Leaderboard
   ngOnInit() {
     this.playerArray = [
       {

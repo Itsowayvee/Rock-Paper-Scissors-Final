@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {ResultService} from '../model/result.service';
+import { ResultService } from '../model/result.service';
 
 @Injectable({
   providedIn: 'root'
@@ -8,8 +8,10 @@ export class GameService {
   messageOut: string;
   compChoice: string;
   userChoice: string;
+  randomChoice: string;
   // '1' - Paper , '2' - Rock , '3' - Scissors
-  rockPaperScissors = ['r' , 'p' , 's'];
+  rockPaperScissors = ['r', 'p', 's'];
+  random = ['m'];
 
   constructor(private gameResult: ResultService) { }
 
@@ -40,12 +42,19 @@ export class GameService {
     document.getElementById('r').classList.remove('green-glow', 'red-glow', 'gray-glow');
     document.getElementById('p').classList.remove('green-glow', 'red-glow', 'gray-glow');
     document.getElementById('s').classList.remove('green-glow', 'red-glow', 'gray-glow');
+    document.getElementById('m').classList.remove('green-glow', 'red-glow', 'gray-glow');
   }
+
 
   Play(uChoice: string) {
     this.userChoice = uChoice;
     this.compChoice = this.rockPaperScissors[Math.floor(Math.random() * this.rockPaperScissors.length)];
     // console.log(this.compChoice);
+
+    //random button
+    this.randomChoice = uChoice;
+    var uChoice = this.rockPaperScissors[Math.floor(Math.random() * this.rockPaperScissors.length)];
+    //random button
 
     switch (uChoice + this.compChoice) {
       // For Paper:
